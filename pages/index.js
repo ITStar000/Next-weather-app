@@ -61,7 +61,7 @@ export default function Home({ weatherInfo, city }) {
             </div>
             <div>
               <img
-                src={`http://openweathermap.org/img/wn/${weatherInfo.weather[0].icon}@2x.png`}
+                src={`https://openweathermap.org/img/wn/${weatherInfo.weather[0].icon}@2x.png`}
                 alt=""
               />
             </div>
@@ -94,7 +94,7 @@ export async function getServerSideProps() {
   const city = ipData.regionName;
   console.log(city)
   const api_key = 'afebd9785505ed40d88667439f372dca';
-  const url = `http://api.openweathermap.org/data/2.5/weather?q=${city},&appid=${api_key}&units=metric`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},&appid=${api_key}&units=metric`;
   const weatherRequest = await fetch(url);
   const weatherInfo = await weatherRequest.json();
 
