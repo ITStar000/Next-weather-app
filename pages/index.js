@@ -90,9 +90,9 @@ export default function Home({ weatherInfo, city }) {
 export async function getServerSideProps() {
   const ipRequest = await fetch(`http://ip-api.com/json/`);
   const ipData = await ipRequest.json();
-  // const city = "Lagos";
-  const city = ipData.regionName;
-  console.log(city)
+   const city = "Moscow";
+  // const city = ipData.regionName;
+
   const api_key = 'afebd9785505ed40d88667439f372dca';
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},&appid=${api_key}&units=metric`;
   const weatherRequest = await fetch(url);
